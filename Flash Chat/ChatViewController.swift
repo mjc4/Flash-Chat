@@ -212,34 +212,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.messageTableView.reloadData()
         }
     }
-
-    
-    
-    
-    @IBAction func logOutPressed(_ sender: AnyObject) {
-        
-        // Display Loading Icon
-        SVProgressHUD.show()
-        
-        //TODO: Log out the user and send them back to WelcomeViewController
-        do {
-            try Auth.auth().signOut()
-            
-            // Return to the Welcome Page
-            
-            guard (navigationController?.popToRootViewController(animated: true)) != nil
-            
-                else{
-                    print("No view controller to pop out")
-                    return
-            }
-            
-            SVProgressHUD.dismiss()
-        }
-        catch {
-            
-        }
-    }
     
 
 
